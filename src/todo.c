@@ -4,6 +4,7 @@
 
 #include "todo.h"
 #include "votd.h"
+
 int read_todo_name(char* name, size_t size) {
   printf("Name: ");
 
@@ -11,6 +12,9 @@ int read_todo_name(char* name, size_t size) {
     perror("Reading todo name failed...\n");
     return 1;
   }
+
+  // remove new line
+  name[strcspn(name, "\n")] = 0;
 
   printf("ok. Name: %s\n", name);
   return 0;
