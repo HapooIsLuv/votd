@@ -4,4 +4,8 @@
 
 #define TODO_INTRO_TEXT "Your Todos"
 
+#define DELIM "|"
+
+#define TODO_DIR "/home/yeonjun/.todos/"
+
 #endif
