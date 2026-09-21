@@ -1,29 +1,34 @@
 #include <stdio.h>
 #include <string.h>
-#include "config.h"
+
+#include "../config.h"
 #include "votd.h"
+#include "todo.h"
 
 void op_add() {
-  printf("adding element...\n");
-  printf("Name: ");
-
-  char name[MAX_OP_STR_SIZE];
-  fgets(name, MAX_OP_STR_SIZE, stdin);
-  printf("ok. Name: %s\n", name);
+  printf("adding todo...\n");
 
 
+  char name[MAX_STR_SIZE];
+  if (read_todo_name(name, MAX_STR_SIZE) > 0) {
+    return;
+  } 
+  printf("DBG: %s\n", name);
+  
   return;
 }
 
 void op_rm() {
   printf("removing...\n");
-  printf("Name: ");
 
-  char name[MAX_OP_STR_SIZE];
-  fgets(name, MAX_OP_STR_SIZE, stdin);
-  printf("ok. Name: %s\n", name);
+  char name[MAX_STR_SIZE];
 
-
+  if (read_todo_name(name, MAX_STR_SIZE) > 0) {
+    return;
+  }
+  
+  printf("DBG: %s\n", name);
+  
   return;
 }
 
